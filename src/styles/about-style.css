@@ -1,0 +1,8 @@
+.jumbotron{
+    padding: 2rem 1rem;
+    background-image: url(../public/hero.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 350px;
+}
