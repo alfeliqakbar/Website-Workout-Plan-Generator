@@ -1,17 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/assets/fit.png" type="image/x-icon" />
-    <title>EZ-Fit</title>
-  </head>
-  <body>
-    <header>
-      <nav-bar></nav-bar>
-    </header>
-    <main tabindex="0" id="content">
+const Home = {
+  async render() {
+    return `
       <section id="jumbotron">
         <jumbotron-section></jumbotron-section>
       </section>
@@ -36,7 +25,12 @@
           </button>
         </div>
       </section>
-    </main>
-    <footer>Ini bagian footer</footer>
-  </body>
-</html>
+    `;
+  },
+
+  async afterRender() {
+    // fungsi yang dipanggil saat setelah page muncul jalan di dalam sini
+  },
+};
+
+export default Home;
