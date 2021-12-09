@@ -1,3 +1,5 @@
+import WorkoutPlanGeneratorSource from '../../data/workoutplangenerator-source';
+
 const WorkoutPlan = {
   async render() {
     return `
@@ -7,6 +9,8 @@ const WorkoutPlan = {
 
   async afterRender() {
     // fungsi yang dipanggil saat setelah page muncul jalan di dalam sini
+    const workoutPlan = await WorkoutPlanGeneratorSource.getRandomWorkoutPlan();
+    console.info(workoutPlan);
   },
 };
 
