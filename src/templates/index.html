@@ -1,64 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="fit.png" type="image/x-icon">
-  <title>EZ-Fit</title>
-</head>
-<body>
-  <header> Ini Header</header>
-  <main>
-    <section id="jumbotron">
-      <!-- Jumbotron -->
-      <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="display-4">Fluid jumbotron</h1>
-          <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/assets/fit.png" type="image/x-icon" />
+    <title>EZ-Fit</title>
+  </head>
+  <body>
+    <header>
+      <nav-bar></nav-bar>
+    </header>
+    <main id="content">
+      <section id="jumbotron">
+        <jumbotron-section></jumbotron-section>
+      </section>
+      <section id="description" class="text-center">
+        <h3 class="mt-4">It's Time To Get Fit</h3>
+        <h4 class="mx-auto mb-4 fw-normal px-5 lh-base">
+          People usually confused when it’s time planning a workout program for
+          them. Many people think that building muscle can only be done on a gym
+          and with equipment. It’s time to change that perspective! We provide
+          you a workout plan based on your time, level, muscle group and type.
+          Having a healthy and fit body is everybody rights.<br />
+          Get fit with us now!
+        </h4>
+      </section>
+      <section id="carousel">
+        <carousel-container></carousel-container>
+      </section>
+      <section id="callToAction">
+        <div class="text-center my-5">
+          <button class="btn btn-primary" role="button">
+            Get My Workout Plan
+          </button>
         </div>
-      </div>
-      <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-    </section>
-    <section id="description">
-      People usually confused when it’s time planning a workout program for them. 
-      Many people think that building muscle can only be done on a gym and with equipment.
-      It’s time to change that perspective! 
-      We provide you a workout plan based on your time, level, muscle group and type. 
-      Having a healthy and fit body is everybody rights. 
-      Get fit with us.
-    </section>
-    <section id="carousel">
-      <article>pict1</article>
-      <article>pict2</article>
-      <article>pict3</article>
-    </section>
-    <section id="callToAction">
-      <button>Get My Workout Plan</button>
-    </section>
-  </main>
-  <footer>Ini bagian footer</footer>
-</body>
+      </section>
+    </main>
+    <footer>Ini bagian footer</footer>
+  </body>
 </html>
