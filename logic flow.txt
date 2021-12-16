@@ -1,0 +1,4 @@
+- membuat logic slider agar value range bisa ditampilkan (done)
+- menyimpan value parameter yang dipilih oleh user
+- mengirimkan parameter berdasarakn input user
+

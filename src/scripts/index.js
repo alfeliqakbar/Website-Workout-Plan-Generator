@@ -4,6 +4,7 @@ import './components/navbar';
 import './components/jumbotron';
 import './components/carousel';
 import './components/footer';
+import './components/cta';
 import '../styles/style.css';
 import 'regenerator-runtime';
 import App from './views/app';
