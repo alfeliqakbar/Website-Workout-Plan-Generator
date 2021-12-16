@@ -11,7 +11,7 @@ class Jumbotron extends HTMLElement {
         <p class="lead text-white fst-italic">
           Workout plan made easy. No-equipment training, anywhere, anytime
         </p>
-        <a class="btn btn-primary" href="aboutPage.html" role="button"
+        <a class="btn btn-primary" href="#/workout-plan-generator" role="button"
           >Get Started</a
         >
       </div>
