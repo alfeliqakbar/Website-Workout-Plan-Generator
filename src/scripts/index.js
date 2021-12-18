@@ -10,6 +10,7 @@ import './components/carousel';
 import './components/description';
 import './components/our-team';
 import './components/footer';
+import './components/cta';
 import '../styles/style.css';
 import 'regenerator-runtime';
 import App from './views/app';

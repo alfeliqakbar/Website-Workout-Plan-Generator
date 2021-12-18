@@ -5,8 +5,8 @@ const Home = {
         <jumbotron-section></jumbotron-section>
       </section>
       <section id="description" class="text-center">
-        <h3 class="mt-4">It's Time To Get Fit</h3>
-        <h4 class="mx-auto mb-4 fw-normal px-5 lh-base">
+        <h3 class="mt-5">It's Time To Get Fit</h3>
+        <h4 class="mx-auto mb-5 fw-normal px-5 lh-base">
           People usually confused when it’s time planning a workout program for
           them. Many people think that building muscle can only be done on a gym
           and with equipment. It’s time to change that perspective! We provide
@@ -18,12 +18,8 @@ const Home = {
       <section id="carousel">
         <carousel-container></carousel-container>
       </section>
-      <section id="callToAction">
-        <div class="text-center my-5">
-          <button class="btn btn-primary" role="button">
-            Get My Workout Plan
-          </button>
-        </div>
+      <section id="callToAction" class="text-center my-5">
+        <call-to-action></call-to-action>
       </section>
     `;
   },
