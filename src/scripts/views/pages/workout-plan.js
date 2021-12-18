@@ -1,5 +1,5 @@
 import WorkoutPlanGeneratorSource from '../../data/workoutplangenerator-source';
-// import { createResultTemplate } from '../templates/template-workout';
+import { createResultTemplate } from '../templates/template-workout';
 // import changeLiveDuration from '../../utils/form';
 
 const WorkoutPlan = {
@@ -62,45 +62,7 @@ const WorkoutPlan = {
         Options
       </button>
 
-      <div id="result" class="card p-3 mt-3">
-        <h2>Best Result For You</h2>
-        <div class="type_workout">
-            <h4>Type : Hard</h4>
-            <h4>Area : full</h4>
-            <h4>Level : beginner</h4>
-        </div>
-        <div class="row detail_workout">
-          <div class="col-md-4">
-            <h3>Warm Up</h3>
-            <ul class="list-unstyled">
-              <li>lari 30 detik</li>
-              <li>lari 30 detik</li>  
-              <li>lari 30 detik</li>  
-              <li>lari 30 detik</li>  
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <h3>Workout</h3>
-            <ul class="list-unstyled">
-              <li>lari 30 detik</li>
-              <li>lari 30 detik</li>  
-              <li>lari 30 detik</li>  
-              <li>lari 30 detik</li>  
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <h3>Cooldown</h3>
-            <ul class="list-unstyled">
-              <li>lari 30 detik</li>
-              <li>lari 30 detik</li>  
-              <li>lari 30 detik</li>  
-              <li>lari 30 detik</li>  
-            </ul>
-          </div>
-        </div>
-            
-        </div>
-      </div>
+      <div id="result" class="card p-3 mt-3"></div>
     </div>
     `;
   },
@@ -108,12 +70,10 @@ const WorkoutPlan = {
   async afterRender() {
     // fungsi yang dipanggil saat setelah page muncul jalan di dalam sini
     const workoutPlan = await WorkoutPlanGeneratorSource.getRandomWorkoutPlan();
-    /*
     const resultContainer = document.querySelector('#result');
-    workoutPlan.forEach((workout) => {
-      resultContainer.innerHTML += createResultTemplate(workout);
-    });
-    */
+
+    resultContainer.innerHTML += createResultTemplate(workoutPlan);
+
     console.info(workoutPlan);
 
     const slider = document.querySelector('#durationrange');

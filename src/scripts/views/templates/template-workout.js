@@ -5,26 +5,32 @@ const createResultTemplate = (result) => `
         <h4>Area : ${result.parameters.area}</h4>
         <h4>Level : ${result.parameters.level}</h4>
     </div>
-    <div class="detail_workout">
-        <h3>Warm Up</h3>
-        <ul>
-        ${result.warmup.map((warm) => `
+    <div class="row detail_workout">
+        <div class="col-md-4">
+            <h3>Warm Up</h3>
+            <ul class="list-unstyled">
+            ${result.warmup.map((warm) => `
                 <li>${warm.ex} ${warm.du}</li>
-            `).join('')}      
-        </ul>
-        <h3>Workout</h3>
-        <ul>
-        ${result.workout.map((work) => `
+            `).join('')}
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h3>Workout</h3>
+            <ul class="list-unstyled">
+            ${result.workout.map((work) => `
                 <li>${work.ex} ${work.du}</li>
-            `).join('')}      
-        </ul>
-        <h3>Cooldown</h3>
-        <ul>
-        ${result.cooldown.map((cool) => `
+            `).join('')} 
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h3>Cooldown</h3>
+            <ul class="list-unstyled">
+            ${result.cooldown.map((cool) => `
                 <li>${cool.ex} ${cool.du}</li>
-            `).join('')}      
-        </ul>
-    <div>
+            `).join('')}
+            </ul>
+        </div>
+    </div>
 `;
 
 const createLikeButtonTemplate = () => `
