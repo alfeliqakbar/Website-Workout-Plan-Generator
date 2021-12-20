@@ -69,18 +69,20 @@ const WorkoutPlan = {
 
   async afterRender() {
     // fungsi yang dipanggil saat setelah page muncul jalan di dalam sini
+
     const formWorkout = document.querySelector('#workout-generator-form');
 
-    const addData = () => {
+    formWorkout.addEventListener('submit', (event) => {
+      event.preventDefault();
       const { duration } = formWorkout.elements;
       const type = formWorkout.elements.btntype;
       const area = formWorkout.elements.btnarea;
       const intensity = formWorkout.elements.btnintensity;
-      console.log(duration.value, type.value, area.value, intensity.value);
-    };
-    formWorkout.addEventListener('submit', (event) => {
-      event.preventDefault();
-      addData();
+      console.log(`
+      Duration: ${duration.value},
+      Type: ${type.value},
+      Area: ${area.value},
+      Intentsity: :${intensity.value}`);
       // const param = {
       //   duration: duration.value,
       //   type: type.value,
@@ -97,7 +99,6 @@ const WorkoutPlan = {
     slider.oninput = function () {
       output.innerHTML = this.value;
     };
-    // console.log(slider.value);
   },
 };
 
