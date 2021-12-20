@@ -1,6 +1,5 @@
 import WorkoutPlanGeneratorSource from '../../data/workoutplangenerator-source';
 import { createResultTemplate } from '../templates/template-workout';
-// import changeLiveDuration from '../../utils/form';
 
 const WorkoutPlan = {
   async render() {
@@ -65,60 +64,53 @@ const WorkoutPlan = {
           <button type="button" class="btn m-2 btn-danger btn-sm d-inline" id="resetBtn" onclick="resetOptions()">Reset
             Options
           </button>
-          </div>
-          </form>
-
+        </div>
+      </form>
     </div>
+    <div id="result"></div>
     `;
   },
 
   async afterRender() {
     // fungsi yang dipanggil saat setelah page muncul jalan di dalam sini
 
-    
-
     const formWorkout = document.querySelector('#workout-generator-form');
-    const { duration } = formWorkout.elements.duration;
-    const type = formWorkout.elements.btntype;
-    const area = formWorkout.elements.btnarea;
-    const intensity = formWorkout.elements.btnintensity;
+    const resultContainer = document.querySelector('#result');
+    const workoutPlan = await WorkoutPlanGeneratorSource.getRandomWorkout();
+    console.log(workoutPlan);
+    resultContainer.innerHTML += createResultTemplate(workoutPlan);
 
-    // const { duration } = formWorkout.elements.duration;
-    // const type = formWorkout.elements.btntype;
-    // const area = formWorkout.elements.btnarea;
-    // const intensity = formWorkout.elements.btnintensity;
+    // workoutPlan.forEach((result) => {
+    //   resultContainer.innerHTML += createResultTemplate(result);
+    // });
 
-    // console.info(workoutPlan);
     formWorkout.addEventListener('submit', (event) => {
       event.preventDefault();
-      // addData();
-      const param = {
-        duration: duration.value,
-        type: type.value,
-        area: area.value,
-        level: intensity.value,
-      };
-      const workoutPlan = WorkoutPlanGeneratorSource.getRandomWorkoutPlan(param);
-      console.log('Request: ', workoutPlan);
+      const { duration } = formWorkout.elements;
+      const type = formWorkout.elements.btntype;
+      const area = formWorkout.elements.btnarea;
+      const intensity = formWorkout.elements.btnintensity;
+      console.log(`
+      Duration: ${duration.value},
+      Type: ${type.value},
+      Area: ${area.value},
+      Intentsity: :${intensity.value}`);
+      // const param = {
+      //   duration: duration.value,
+      //   type: type.value,
+      //   area: area.value,
+      //   level: intensity.value,
+      // };
+      // const workoutPlan = WorkoutPlanGeneratorSource.getRandomWorkoutPlan(param);
+      // console.log('Request: ', workoutPlan);
     });
-
 
     // logic slider
     const slider = document.querySelector('#durationrange');
-    console.log(slider.value);
     const output = document.querySelector('#durationValue');
     slider.oninput = function () {
       output.innerHTML = this.value;
     };
-
-    // const addData = () => {
-    //   const { duration } = formWorkout.elements.duration;
-    //   const type = formWorkout.elements.btntype;
-    //   const area = formWorkout.elements.btnarea;
-    //   const intensity = formWorkout.elements.btnintensity;
-
-    //   console.log(duration.value, type.value, area.value, intensity.value);
-    // };
   },
 };
 
