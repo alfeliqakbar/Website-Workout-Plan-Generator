@@ -1,6 +1,5 @@
 import WorkoutPlanGeneratorSource from '../../data/workoutplangenerator-source';
 import { createResultTemplate } from '../templates/template-workout';
-// import changeLiveDuration from '../../utils/form';
 
 const WorkoutPlan = {
   async render() {
@@ -65,10 +64,10 @@ const WorkoutPlan = {
           <button type="button" class="btn m-2 btn-danger btn-sm d-inline" id="resetBtn" onclick="resetOptions()">Reset
             Options
           </button>
-          </div>
-          </form>
-
+        </div>
+      </form>
     </div>
+    <div id="result"></div>
     `;
   },
 
@@ -76,6 +75,14 @@ const WorkoutPlan = {
     // fungsi yang dipanggil saat setelah page muncul jalan di dalam sini
 
     const formWorkout = document.querySelector('#workout-generator-form');
+    const resultContainer = document.querySelector('#result');
+    const workoutPlan = await WorkoutPlanGeneratorSource.getRandomWorkout();
+    console.log(workoutPlan);
+    resultContainer.innerHTML += createResultTemplate(workoutPlan);
+
+    // workoutPlan.forEach((result) => {
+    //   resultContainer.innerHTML += createResultTemplate(result);
+    // });
 
     formWorkout.addEventListener('submit', (event) => {
       event.preventDefault();
@@ -97,7 +104,6 @@ const WorkoutPlan = {
       // const workoutPlan = WorkoutPlanGeneratorSource.getRandomWorkoutPlan(param);
       // console.log('Request: ', workoutPlan);
     });
-
 
     // logic slider
     const slider = document.querySelector('#durationrange');
