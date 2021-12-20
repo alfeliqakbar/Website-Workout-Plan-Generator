@@ -9,6 +9,13 @@ class WorkoutPlanGeneratorSource {
     const responseJson = await response.json();
     return responseJson;
   }
+
+  // buat coba template
+  static async getRandomWorkout() {
+    const response = await fetch(API_ENDPOINT.WORKOUTPLAN);
+    const responseJson = await response.json();
+    return responseJson;
+  }
 }
 
 export default WorkoutPlanGeneratorSource;

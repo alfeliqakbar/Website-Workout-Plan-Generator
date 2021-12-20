@@ -9,25 +9,37 @@ const createResultTemplate = (result) => `
         <div class="col-md-4">
             <h3>Warm Up</h3>
             <ul class="list-unstyled">
-            ${result.warmup.map((warm) => `
+            ${result.warmup
+    .map(
+      (warm) => `
                 <li>${warm.ex} ${warm.du}</li>
-            `).join('')}
+            `,
+    )
+    .join('')}
             </ul>
         </div>
         <div class="col-md-4">
-            <h3>Workout</h3>
+            <h3>Finisher</h3>
             <ul class="list-unstyled">
-            ${result.workout.map((work) => `
+            ${result.finisher
+    .map(
+      (work) => `
                 <li>${work.ex} ${work.du}</li>
-            `).join('')} 
+            `,
+    )
+    .join('')} 
             </ul>
         </div>
         <div class="col-md-4">
             <h3>Cooldown</h3>
             <ul class="list-unstyled">
-            ${result.cooldown.map((cool) => `
+            ${result.cooldown
+    .map(
+      (cool) => `
                 <li>${cool.ex} ${cool.du}</li>
-            `).join('')}
+            `,
+    )
+    .join('')}
             </ul>
         </div>
     </div>
@@ -45,4 +57,8 @@ const createLikedButtonTemplate = () => `
     </button>
 `;
 
-export { createResultTemplate, createLikeButtonTemplate, createLikedButtonTemplate };
+export {
+  createResultTemplate,
+  createLikeButtonTemplate,
+  createLikedButtonTemplate,
+};
