@@ -70,46 +70,34 @@ const WorkoutPlan = {
   async afterRender() {
     // fungsi yang dipanggil saat setelah page muncul jalan di dalam sini
     const formWorkout = document.querySelector('#workout-generator-form');
-    const { duration } = formWorkout.elements.duration;
-    const type = formWorkout.elements.btntype;
-    const area = formWorkout.elements.btnarea;
-    const intensity = formWorkout.elements.btnintensity;
 
-    // const { duration } = formWorkout.elements.duration;
-    // const type = formWorkout.elements.btntype;
-    // const area = formWorkout.elements.btnarea;
-    // const intensity = formWorkout.elements.btnintensity;
-
-    // console.info(workoutPlan);
+    const addData = () => {
+      const { duration } = formWorkout.elements;
+      const type = formWorkout.elements.btntype;
+      const area = formWorkout.elements.btnarea;
+      const intensity = formWorkout.elements.btnintensity;
+      console.log(duration.value, type.value, area.value, intensity.value);
+    };
     formWorkout.addEventListener('submit', (event) => {
       event.preventDefault();
-      // addData();
-      const param = {
-        duration: duration.value,
-        type: type.value,
-        area: area.value,
-        level: intensity.value,
-      };
-      const workoutPlan = WorkoutPlanGeneratorSource.getRandomWorkoutPlan(param);
-      console.log('Request: ', workoutPlan);
+      addData();
+      // const param = {
+      //   duration: duration.value,
+      //   type: type.value,
+      //   area: area.value,
+      //   level: intensity.value,
+      // };
+      // const workoutPlan = WorkoutPlanGeneratorSource.getRandomWorkoutPlan(param);
+      // console.log('Request: ', workoutPlan);
     });
 
     // logic slider
     const slider = document.querySelector('#durationrange');
-    console.log(slider.value);
     const output = document.querySelector('#durationValue');
     slider.oninput = function () {
       output.innerHTML = this.value;
     };
-
-    // const addData = () => {
-    //   const { duration } = formWorkout.elements.duration;
-    //   const type = formWorkout.elements.btntype;
-    //   const area = formWorkout.elements.btnarea;
-    //   const intensity = formWorkout.elements.btnintensity;
-
-    //   console.log(duration.value, type.value, area.value, intensity.value);
-    // };
+    // console.log(slider.value);
   },
 };
 
