@@ -1,4 +1,5 @@
 import WorkoutPlanGeneratorSource from '../../data/workoutplangenerator-source';
+import { createResultTemplate } from '../templates/template-workout';
 // import changeLiveDuration from '../../utils/form';
 
 const WorkoutPlan = {
@@ -14,6 +15,9 @@ const WorkoutPlan = {
               <input type="range" name="duration" class="form-range" min="10" max="50" step="1" id="durationrange"/>
             </div>
           </div>
+
+      
+
           <p><span class="badge rounded-pill bg-primary" id="durationValue">30</span> mins</p>
       
           
@@ -63,6 +67,7 @@ const WorkoutPlan = {
           </button>
           </div>
           </form>
+
     </div>
     `;
   },
@@ -92,6 +97,7 @@ const WorkoutPlan = {
       // const workoutPlan = WorkoutPlanGeneratorSource.getRandomWorkoutPlan(param);
       // console.log('Request: ', workoutPlan);
     });
+
 
     // logic slider
     const slider = document.querySelector('#durationrange');
