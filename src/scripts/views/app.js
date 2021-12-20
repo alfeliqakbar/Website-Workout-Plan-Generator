@@ -5,12 +5,12 @@ class App {
   constructor({ content }) {
     this._content = content;
 
-    this._initialAppShell();
+    // this._initialAppShell();
   }
 
-  _initialAppShell() {
+  // _initialAppShell() {
 
-  }
+  // }
 
   async renderPage() {
     const url = UrlParser.parseActiveUrlWithCombiner();
