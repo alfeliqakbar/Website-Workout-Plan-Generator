@@ -82,10 +82,12 @@ const WorkoutPlan = {
 
     const formWorkout = document.querySelector('#workout-generator-form');
     const resultContainer = document.querySelector('#result');
-    const workoutPlan = await WorkoutPlanGeneratorSource.getRandomWorkout();
-    console.log(workoutPlan);
-    resultContainer.innerHTML += createResult(workoutPlan);
-
+    // const workoutPlan = await WorkoutPlanGeneratorSource.getRandomWorkout();
+    // console.log(workoutPlan);
+    // workoutPlan.forEach((result) => {
+    //   resultContainer.innerHTML += createResultTemplate(result);
+    // });  
+    
     formWorkout.addEventListener('submit', (event) => {
       event.preventDefault();
       const { duration } = formWorkout.elements;
@@ -97,6 +99,18 @@ const WorkoutPlan = {
       Type: ${type.value},
       Area: ${area.value},
       Intentsity: :${intensity.value}`);
+      
+      const param = {
+        duration: duration.value,
+        type: type.value,
+        area: area.value,
+        level: intensity.value,
+      };
+      // eslint-disable-next-line max-len
+      const workoutPlan = WorkoutPlanGeneratorSource.getRandomWorkoutPlan(param.duration, param.type, param.area, param.level);
+      resultContainer.innerHTML += createResultTemplate(workoutPlan);
+      console.log(workoutPlan);
+
     });
   },
 };
