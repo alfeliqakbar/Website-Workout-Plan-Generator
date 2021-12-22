@@ -1,4 +1,5 @@
 - membuat logic slider agar value range bisa ditampilkan (done)
-- menyimpan value parameter yang dipilih oleh user
-- mengirimkan parameter berdasarakn input user
+- menyimpan value dari form yang di input
+- passing parameter untuk di get pada halaman workout plan
+- membuat tombol favorite untuk menyimpan dan menampilkannya pada halaman my plan
 

@@ -9,7 +9,7 @@ class ourTeam extends HTMLElement {
         <h2>Our Team</h2>
         <div class="row d-flex justify-content-center mb-3">
         <div class="card p-3" style="width: 18rem;">
-            <img src="/assets/profil-team.jpg" class="rounded-circle mx-auto" alt="..." style="width:200px">
+            <img src="/assets/feliq-profile.jpeg" class="rounded-circle mx-auto" alt="..." style="width:200px; object-fit: cover; object-position: center;">
             <div class="card-body">
             <h5 class="card-title">Al Feliq Akbar</h5>
             <p class="card-text">Universitas.</p>
