@@ -45,6 +45,10 @@ const createResultTemplate = (result) => `
     </div>
 `;
 
+const createResult = () => {
+  Object.keys
+}
+
 const createLikeButtonTemplate = () => `
     <button aria-label="like this result" id="likeButton" class="like">
         <i class="fa fa-heart-o" aria-hidden="true"></i>
@@ -58,6 +62,7 @@ const createLikedButtonTemplate = () => `
 `;
 
 export {
+  createResult,
   createResultTemplate,
   createLikeButtonTemplate,
   createLikedButtonTemplate,
