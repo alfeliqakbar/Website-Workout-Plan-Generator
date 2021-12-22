@@ -1,5 +1,5 @@
 import WorkoutPlanGeneratorSource from '../../data/workoutplangenerator-source';
-import { createResultTemplate } from '../templates/template-workout';
+import { createResultTemplate, createResult } from '../templates/template-workout';
 
 const WorkoutPlan = {
   async render() {
@@ -73,16 +73,18 @@ const WorkoutPlan = {
 
   async afterRender() {
     // fungsi yang dipanggil saat setelah page muncul jalan di dalam sini
+    // logic slider
+    const slider = document.querySelector('#durationrange');
+    const output = document.querySelector('#durationValue');
+    slider.oninput = function () {
+      output.innerHTML = this.value;
+    };
 
     const formWorkout = document.querySelector('#workout-generator-form');
     const resultContainer = document.querySelector('#result');
     const workoutPlan = await WorkoutPlanGeneratorSource.getRandomWorkout();
     console.log(workoutPlan);
-    resultContainer.innerHTML += createResultTemplate(workoutPlan);
-
-    // workoutPlan.forEach((result) => {
-    //   resultContainer.innerHTML += createResultTemplate(result);
-    // });
+    resultContainer.innerHTML += createResult(workoutPlan);
 
     formWorkout.addEventListener('submit', (event) => {
       event.preventDefault();
@@ -95,22 +97,7 @@ const WorkoutPlan = {
       Type: ${type.value},
       Area: ${area.value},
       Intentsity: :${intensity.value}`);
-      // const param = {
-      //   duration: duration.value,
-      //   type: type.value,
-      //   area: area.value,
-      //   level: intensity.value,
-      // };
-      // const workoutPlan = WorkoutPlanGeneratorSource.getRandomWorkoutPlan(param);
-      // console.log('Request: ', workoutPlan);
     });
-
-    // logic slider
-    const slider = document.querySelector('#durationrange');
-    const output = document.querySelector('#durationValue');
-    slider.oninput = function () {
-      output.innerHTML = this.value;
-    };
   },
 };
 
