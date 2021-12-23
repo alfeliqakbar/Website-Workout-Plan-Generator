@@ -1,5 +1,5 @@
 import WorkoutPlanGeneratorSource from '../../data/workoutplangenerator-source';
-import { createResultTemplate, createResult } from '../templates/template-workout';
+// import { createResultTemplate, createResult } from '../templates/template-workout';
 
 const WorkoutPlan = {
   async render() {
