@@ -83,6 +83,7 @@ const WorkoutPlan = {
 
     const formWorkout = document.querySelector('#workout-generator-form');
 
+
     // coba template
     const workout = await WorkoutPlanGeneratorSource.getRandomWorkout();
     const resultContainer = document.querySelector('#result');
@@ -100,35 +101,37 @@ const WorkoutPlan = {
       }
     });
     // resultContainer.innerHTML += createResult(workout);
+
     // const workoutPlan = await WorkoutPlanGeneratorSource.getRandomWorkout();
     // console.log(workoutPlan);
     // workoutPlan.forEach((result) => {
     //   resultContainer.innerHTML += createResultTemplate(result);
     // });
 
-    // formWorkout.addEventListener('submit', (event) => {
-    //   event.preventDefault();
-    //   const { duration } = formWorkout.elements;
-    //   const type = formWorkout.elements.btntype;
-    //   const area = formWorkout.elements.btnarea;
-    //   const intensity = formWorkout.elements.btnintensity;
-    //   console.log(`
-    //   Duration: ${duration.value},
-    //   Type: ${type.value},
-    //   Area: ${area.value},
-    //   Intentsity: :${intensity.value}`);
+//     formWorkout.addEventListener('submit', (event) => {
+//       event.preventDefault();
+//       const { duration } = formWorkout.elements;
+//       const type = formWorkout.elements.btntype;
+//       const area = formWorkout.elements.btnarea;
+//       const intensity = formWorkout.elements.btnintensity;
+//       console.log(`
+//       Duration: ${duration.value},
+//       Type: ${type.value},
+//       Area: ${area.value},
+//       Intentsity: :${intensity.value}`);
+//       const param = {
+//         duration: duration.value,
+//         type: type.value,
+//         area: area.value,
+//         level: intensity.value,
+//       };
+//       // eslint-disable-next-line max-len
+//       const workoutPlan = WorkoutPlanGeneratorSource.getRandomWorkoutPlan(param.duration, param.type, param.area, param.level);
+//       resultContainer.innerHTML += createResultTemplate(workoutPlan);
+//       console.log(workoutPlan);
+//     });
 
-    //   const param = {
-    //     duration: duration.value,
-    //     type: type.value,
-    //     area: area.value,
-    //     level: intensity.value,
-    //   };
-    //   // eslint-disable-next-line max-len
-    //   const workoutPlan = await WorkoutPlanGeneratorSource.getRandomWorkoutPlan(param.duration, param.type, param.area, param.level);
-    //   resultContainer.innerHTML += createResultTemplate(workoutPlan);
-    //   console.log(workoutPlan);
-    // });
+  
   },
 };
 
