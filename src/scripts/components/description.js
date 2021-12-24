@@ -9,7 +9,7 @@ class describeWeb extends HTMLElement {
         <div class="row p-3">
         <h2>Purpose</h2>
         <div class="col-md-6">
-            <img src="/assets/hero.jpg" class="img-fluid" alt="">
+          <img src="assets/hero.jpg" class="img-fluid" alt="hero">
         </div>
         <div class="col-md-6">
             <p style="font-size:1.2em;text-align:justify">This website was created to help everyone live healthier and exercise with tools that are easy to find and easy to use. thereby strengthening the immune system and preventing various diseases.</p>
