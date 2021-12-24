@@ -32,9 +32,9 @@ class FootElement extends HTMLElement {
             </div>
         </div>
         <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-            <p><a href="#" class="text-white" style="text-decoration: none;">Home</a></p>
-            <p><a href="#" class="text-white" style="text-decoration: none;">My Plan</a></p>
-            <p><a href="#" class="text-white" style="text-decoration: none;">About</a></p>
+            <p><a href="#/home" class="text-white" style="text-decoration: none;">Home</a></p>
+            <p><a href="#/workout-plan-generator" class="text-white" style="text-decoration: none;">Workout Plan</a></p>
+            <p><a href="#/about" class="text-white" style="text-decoration: none;">About</a></p>
         </div>
         </div>
         <hr>
