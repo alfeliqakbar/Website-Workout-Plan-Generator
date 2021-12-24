@@ -45,6 +45,32 @@ const createResultTemplate = (result) => `
     </div>
 `;
 
+function createResult(result) {
+  const resultContainer = document.querySelector('#result');
+  Object.entries(result).forEach(([key, value]) => {
+    // title Element
+    const title = key[0].toUpperCase() + key.substring(1);
+    const titleElement = document.createElement('h3');
+    titleElement.innerHTML = `${title}`;
+    resultContainer.appendChild(titleElement);
+    console.log(key);
+    // listElement
+    const listContainer = document.createElement('ul');
+    // const listItem = document.createElement('li');
+    if (key !== 'parameters') {
+      // console.log(value);
+      const node = value.map((data) => {
+        console.log(data.ex);
+        console.log(data.du);
+        const listItem = document.createElement('li');
+        listItem.textContent = `${data.ex}, ${data.du}'s`;
+        return listItem;
+      });
+      listContainer.append(...node);
+    }
+    resultContainer.appendChild(listContainer);
+  });
+}
 const createLikeButtonTemplate = () => `
     <button aria-label="like this result" id="likeButton" class="like">
         <i class="fa fa-heart-o" aria-hidden="true"></i>
