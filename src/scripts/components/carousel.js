@@ -54,7 +54,7 @@ class Carousel extends HTMLElement {
                 </div>
                 <div class="col-md">
                   <img
-                    src="/assets/pict-1.jpg"
+                    src="assets/pict-1.jpg"
                     class="d-block w-100 carousel-image"
                     alt="..."
                   />
@@ -82,7 +82,7 @@ class Carousel extends HTMLElement {
                 </div>
                 <div class="col-md">
                   <img
-                    src="/assets/pict-2.jpg"
+                    src="assets/pict-2.jpg"
                     class="d-block w-100 carousel-image"
                     alt="..."
                   />
@@ -110,7 +110,7 @@ class Carousel extends HTMLElement {
                 </div>
                 <div class="col-md">
                   <img
-                    src="/assets/pict-3.jpg"
+                    src="assets/pict-3.jpg"
                     class="d-block w-100 carousel-image"
                     alt="..."
                   />
